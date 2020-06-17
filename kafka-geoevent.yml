@@ -1,0 +1,9 @@
+bootstrap_servers:
+  - "52.247.170.103:9092"
+zookeeper:
+  - "52.247.170.103:2181"
+
+in-topic: deepstream-topic
+out-polyline-topic: deepstream-polylines
+out-point-topic: deepstream-points
+out-count-topic: deepstream-counts

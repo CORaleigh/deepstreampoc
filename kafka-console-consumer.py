@@ -1,5 +1,6 @@
 from kafka import KafkaConsumer
 import argparse
+import json
 
 parser = argparse.ArgumentParser('this is my description')
 
@@ -14,4 +15,9 @@ print(consumer.topics())
 
 print("Getting messages")
 for msg in consumer:
-    print(msg.value)
+    try:
+        parsed_json = json.loads(msg.value)
+        print(parsed_json)
+    except:
+        print(type(msg))
+        print(msg.value)
